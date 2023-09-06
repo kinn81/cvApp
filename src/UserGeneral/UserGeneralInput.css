@@ -1,0 +1,13 @@
+#UserGeneralInput {
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+}
+
+input{
+    display:inline-block;
+    width:130px;
+}​

@@ -1,0 +1,17 @@
+#EducationInput {
+  padding-top: 10px;
+}
+
+#EducationInputForm {
+  padding: 10px 0 10px 0;
+  border: 1px solid red;
+}
+
+#DisplayEducationInputForm {
+  display: flex;
+  gap: 10px;
+}
+
+#DisplayEducationInputForm label {
+  width: auto;
+}
