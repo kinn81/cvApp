@@ -11,7 +11,7 @@ function UserEducationInput({ userEducation, setUserEducation }) {
 
   return (
     <>
-      <h2>User Education</h2>
+      <h2>Education details</h2>
       {isFormVisible ? (
         <DisplayEducationInputForm
           setFormVisible={setFormVisible}
@@ -23,7 +23,7 @@ function UserEducationInput({ userEducation, setUserEducation }) {
           <ul>
             {userEducation.map((record) => {
               return (
-                <li key={record.school}>
+                <li key={record.school + record.fromDate + record.toDate}>
                   {record.school}, {record.fromDate} - {record.toDate}
                 </li>
               );

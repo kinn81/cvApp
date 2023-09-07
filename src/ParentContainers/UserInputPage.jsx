@@ -9,7 +9,7 @@ function UserInputPage({
 }) {
   return (
     <div id="UserInputPage">
-      <h2>User Input</h2>
+      <h2>Basic information</h2>
       <UserGeneralInput
         userDetails={userDetails}
         setUserDetails={setUserDetails}

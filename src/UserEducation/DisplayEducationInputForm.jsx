@@ -1,12 +1,31 @@
 import EducationInput from "./EducationInput";
 import { useState } from "react";
 
-function addSchool(school, startYear, endYear) {
-  return { school, startYear, endYear };
+function addSchool(school, fromDate, toDate) {
+  return { school, fromDate, toDate };
 }
 
-const handleSubmit = () => {
-  console.log("You added a record!");
+const handleSubmit = (
+  school,
+  fromDate,
+  toDate,
+  userEducation,
+  setUserEducation,
+  setFormVisible
+) => {
+  for (let record of userEducation) {
+    if (
+      record.school === school &&
+      record.fromDate === fromDate &&
+      record.toDate === toDate
+    ) {
+      setFormVisible(false);
+      return;
+    }
+  }
+  const newRecord = addSchool(school, fromDate, toDate);
+  setUserEducation([...userEducation, newRecord]);
+  setFormVisible(false);
 };
 
 function DisplayEducationInputForm({
@@ -43,7 +62,20 @@ function DisplayEducationInputForm({
         inputFields={inputFields}
         onChangeFunction={setInputFields}
       />
-      <button onClick={handleSubmit}>Add+</button>
+      <button
+        onClick={() => {
+          handleSubmit(
+            inputFields.school,
+            inputFields.fromDate,
+            inputFields.toDate,
+            userEducation,
+            setUserEducation,
+            setFormVisible
+          );
+        }}
+      >
+        Add+
+      </button>
     </div>
   );
 }

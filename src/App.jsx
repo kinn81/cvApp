@@ -12,8 +12,8 @@ function App() {
   });
 
   const [userEducation, setUserEducation] = useState([
-    { school: "Western Springs College", fromDate: "1994", toDate: "1998" },
-    { school: "University of Auckland", fromDate: "2000", toDate: "2003" },
+    { school: "Springfield elementary", fromDate: "1994", toDate: "1998" },
+    { school: "Springfield University", fromDate: "2000", toDate: "2003" },
   ]);
 
   return (
@@ -24,7 +24,7 @@ function App() {
         userEducation={userEducation}
         setUserEducation={setUserEducation}
       />
-      <CVPage userDetails={userDetails} />
+      <CVPage userDetails={userDetails} educationDetails={userEducation} />
     </div>
   );
 }

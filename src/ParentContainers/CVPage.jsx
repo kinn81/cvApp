@@ -1,4 +1,6 @@
-function CVPage({ userDetails }) {
+import "./CVPage.css";
+
+function CVPage({ userDetails, educationDetails }) {
   return (
     <div id="CVPage">
       <h2>Formatted CV</h2>
@@ -8,6 +10,15 @@ function CVPage({ userDetails }) {
         {userDetails.email && userDetails.phone ? "/" : null}{" "}
         {userDetails.phone}
       </p>
+      <ul id="educationList">
+        {educationDetails.map((record) => {
+          return (
+            <li key={record.school + record.fromDate + record.toDate}>
+              {Object.values(record).join(", ")}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

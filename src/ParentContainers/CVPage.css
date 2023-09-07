@@ -1,0 +1,8 @@
+#CVPage {
+  background-color: lightblue;
+  width: 50%;
+}
+
+#CVPage ul {
+  list-style-position: inside;
+}
